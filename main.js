@@ -386,6 +386,16 @@
       else return false;
       return true;
     });
+    // Load the clip as a blob before it scrolls into view. A blob seeks frame-accurately
+    // even when the host ignores HTTP range requests, which plain <video src> needs for seeking.
+    const loadVideo = () => {
+      const url = video.dataset.src;
+      fetch(url).then((r) => { if (!r.ok) throw new Error(r.status); return r.blob(); })
+        .then((b) => { video.src = URL.createObjectURL(b); })
+        .catch(() => { video.src = url; });
+    };
+    const vio = new IntersectionObserver(([e]) => { if (e.isIntersecting) { vio.disconnect(); loadVideo(); } }, { rootMargin: "800px 0px" });
+    vio.observe(stageEl);
     // Pause when scrolled away.
     new IntersectionObserver(([e]) => { if (!e.isIntersecting && !video.paused) video.pause(); }, { threshold: 0.1 }).observe(stageEl);
     renderBar(); renderState();
