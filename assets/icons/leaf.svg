@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2a31"/>
+      <stop offset="1" stop-color="#141417"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#e48a1c"/>
+      <stop offset="0.5" stop-color="#f5b84a"/>
+      <stop offset="1" stop-color="#ffe3a3"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="232" height="232" rx="56" fill="url(#bg)"/>
+  <rect x="12.5" y="12.5" width="231" height="231" rx="55.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+  <!-- a page behind the leaf -->
+  <path d="M78 52 H148 L182 86 V196 C182 201 178 205 173 205 H78 C73 205 69 201 69 196 V61 C69 56 73 52 78 52 Z" fill="#ffffff" fill-opacity="0.10"/>
+  <path d="M148 52 V78 C148 82.5 151.5 86 156 86 H182" fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="3"/>
+  <!-- the leaf -->
+  <path d="M62 196 C60 128 104 80 196 66 C190 152 146 196 62 196 Z" fill="url(#leaf)"/>
+  <path d="M70 188 C104 152 136 122 178 86" fill="none" stroke="#141417" stroke-opacity="0.45" stroke-width="5" stroke-linecap="round"/>
+  <path d="M112 146 C112 132 110 122 106 112 M140 118 C142 108 142 100 140 92 M118 140 C132 142 146 140 160 134" fill="none" stroke="#141417" stroke-opacity="0.3" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M196 158 C198.5 178 202 181.5 222 184 C202 186.5 198.5 190 196 210 C193.5 190 190 186.5 170 184 C190 181.5 193.5 178 196 158 Z" fill="#ffe3a3" fill-opacity="0.9"/>
+</svg>

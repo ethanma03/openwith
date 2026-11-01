@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.remove("no-js")</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>openwith — Glint, Flick and Leaf for Windows</title>
+  <meta name="description" content="Glint, Flick and Leaf are three fast, quiet, open-source viewers for Windows. Glint opens images, Flick plays video, and Leaf reads PDF and Word documents. Each one opens instantly and can be driven from the command line.">
+  <meta name="theme-color" content="#0e0e10">
+  <link rel="icon" href="assets/icons/openwith.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="openwith — the apps your files should open with">
+  <meta property="og:description" content="Glint, Flick and Leaf: fast, quiet, open-source viewers for images, video and documents on Windows.">
+  <meta property="og:image" content="https://openwith.dev/assets/og.png">
+  <meta property="og:url" content="https://openwith.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the content</a>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="openwith, back to the top">
+      <svg class="spark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4C34 22 42 30 60 32C42 34 34 42 32 60C30 42 22 34 4 32C22 30 30 22 32 4Z"/></svg>
+      <span>openwith</span>
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#glint"><img src="assets/icons/glint.svg" alt="">Glint</a>
+      <a href="#flick"><img src="assets/icons/flick.svg" alt="">Flick</a>
+      <a href="#leaf"><img src="assets/icons/leaf.svg" alt="">Leaf</a>
+      <a href="#agents">With Claude Code</a>
+    </nav>
+    <button class="palette-btn" type="button" data-palette aria-label="Open the command palette">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+      <span>Search</span><kbd>Ctrl</kbd><kbd>K</kbd>
+    </button>
+    <a class="btn btn-small" href="#download">Download</a>
+  </header>
+
+  <main id="main">
+    <!-- ───────────────────────── Hero ───────────────────────── -->
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span>Free and open source for Windows 10 and 11</p>
+        <h1>The apps your files should <span class="amber">open&nbsp;with.</span></h1>
+        <p class="lede">
+          <b>Glint</b> opens images, <b>Flick</b> plays video, and <b>Leaf</b> reads PDF and Word documents.
+          Each one opens the moment you double-click a file, keeps its interface out of your way, and can be
+          controlled from the command line. That last part makes them a natural fit next to Claude Code.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#download">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="#glint">Try the live demos</a>
+        </div>
+        <ul class="facts" aria-label="At a glance">
+          <li>Written in Rust</li><li>MIT licensed</li><li>No account, no telemetry</li><li>Version 0.1.0</li>
+        </ul>
+      </div>
+
+      <figure class="hero-stage">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="window hero-window" data-rotator>
+          <div class="titlebar" role="tablist" aria-label="Choose an app to preview">
+            <button class="tab is-active" role="tab" aria-selected="true"><img src="assets/icons/glint.svg" alt="">Glint</button>
+            <button class="tab" role="tab" aria-selected="false"><img src="assets/icons/flick.svg" alt="">Flick</button>
+            <button class="tab" role="tab" aria-selected="false"><img src="assets/icons/leaf.svg" alt="">Leaf</button>
+            <span class="tab-progress" aria-hidden="true"></span>
+          </div>
+          <div class="viewport">
+            <img class="is-active" src="assets/shots/glint-fit.webp" alt="Glint showing a pixel-art platformer scene at a crisp 500 percent zoom." width="1920" height="1013">
+            <img src="assets/shots/flick-clip.webp" alt="Flick paused on Big Buck Bunny, with a clip from 1:31 to 1:47 marked on the timeline." width="1920" height="1013" loading="lazy">
+            <img src="assets/shots/leaf-dark.webp" alt="Leaf showing the Wikipedia article about leaves in night mode, with search results for chlorophyll in the sidebar." width="1920" height="1013" loading="lazy">
+          </div>
+        </div>
+        <figcaption>These are real screenshots. Each app captured its own window with its built-in <code>snap</code> command.</figcaption>
+      </figure>
+
+      <div class="trio">
+        <a href="#glint" class="trio-card"><img src="assets/icons/glint.svg" alt=""><span><b>Glint</b> shows images exactly as they are, from tiny pixel-art sprites to camera RAW files.</span></a>
+        <a href="#flick" class="trio-card"><img src="assets/icons/flick.svg" alt=""><span><b>Flick</b> plays any video and turns the part you mark into a ready-to-run ffmpeg command.</span></a>
+        <a href="#leaf" class="trio-card"><img src="assets/icons/leaf.svg" alt=""><span><b>Leaf</b> reads PDFs and Word documents comfortably, by day or by night.</span></a>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Glint ───────────────────────── -->
+    <section class="app reveal" id="glint">
+      <header class="app-head">
+        <img class="app-icon" src="assets/icons/glint.svg" alt="">
+        <div>
+          <p class="eyebrow">Glint · images</p>
+          <h2>See every pixel exactly as it is.</h2>
+        </div>
+      </header>
+      <p class="app-lede">
+        Glint is an image viewer made for game sprites and screenshots. It measures zoom in real screen pixels and
+        snaps to whole steps such as 200%, 300% and 400%, so pixel art never turns blurry. When you need to check a change,
+        it compares two images and tells you precisely how different they are.
+      </p>
+
+      <div class="demo" data-glint tabindex="0" aria-label="Interactive Glint demo">
+        <div class="window">
+          <div class="titlebar plain">
+            <span class="lights"></span>
+            <span class="win-title"><img src="assets/icons/glint.svg" alt=""><span data-g-title>meadow.png</span> — Glint</span>
+            <span class="live">Live demo</span>
+          </div>
+          <div class="g-stage">
+            <canvas aria-label="Pixel-art scene. Scroll to zoom, drag to pan."></canvas>
+            <div class="hud g-hud">
+              <span data-g-info>meadow.png · 459 × 220 · PNG</span>
+              <span class="sep"></span>
+              <span class="g-px" data-g-px><i class="swatch"></i><span>Point at a pixel</span></span>
+              <span class="sep"></span>
+              <b data-g-zoom>—</b>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="seg" role="radiogroup" aria-label="Compare mode">
+              <button role="radio" aria-checked="true" class="is-active" data-mode="view">Image</button>
+              <button role="radio" aria-checked="false" data-mode="diff">Diff</button>
+              <button role="radio" aria-checked="false" data-mode="side">Side by side</button>
+              <button role="radio" aria-checked="false" data-mode="onion">Onion skin</button>
+              <button role="radio" aria-checked="false" data-mode="swipe">Swipe</button>
+            </div>
+            <label class="slider" data-g-split hidden><span class="sr">Onion opacity or swipe position</span><input type="range" min="0" max="100" value="50"></label>
+            <div class="tool-btns">
+              <button data-g-act="out" aria-label="Zoom out">−</button>
+              <button data-g-act="in" aria-label="Zoom in">+</button>
+              <button data-g-act="fit">Fit</button>
+              <button data-g-act="grid" aria-pressed="true">Grid</button>
+            </div>
+          </div>
+          <div class="metrics-bar" data-g-metrics hidden></div>
+        </div>
+        <p class="hint-row">
+          <span><b>Try it:</b> scroll over the image to zoom, drag to move around, and point at any pixel to read its colour.
+          Switch to <b>Diff</b> or <b>Swipe</b> to compare the scene with a palette-swapped copy.</span>
+          <span class="keys"><kbd>G</kbd> grid <kbd>0</kbd> fit <kbd>1</kbd>–<kbd>9</kbd> zoom <kbd>M</kbd> next mode</span>
+        </p>
+      </div>
+
+      <div class="features">
+        <div><h3>Pixel art stays crisp.</h3><p>Small sprites open at the largest whole-number scale that fits the window, and a pixel grid fades in from 600%. Smooth scaling is one key away when you want it.</p></div>
+        <div><h3>It opens almost anything.</h3><p>PNG, JPEG, GIF, WebP, Aseprite, DDS, EXR and a dozen more formats are built in, and AVIF, HEIC, PSD and camera RAW go through ImageMagick. Glint recognises files by their contents, so a JPEG named <code>.png</code> still opens.</p></div>
+        <div><h3>It understands sprite sheets.</h3><p>The sprite-sheet panel slices any grid, can detect the grid from the gaps between sprites, numbers every cell and previews the cells as an animation. Aseprite files play with their tags.</p></div>
+        <div><h3>Comparisons come with numbers.</h3><p>Diff, side-by-side, onion-skin and swipe modes show what changed, and Glint reports the count of differing pixels, the largest channel change, RMSE and PSNR. In Explorer you can select two images and choose “Compare with Glint”.</p></div>
+      </div>
+
+      <div class="shots">
+        <figure>
+          <div class="window"><img src="assets/shots/glint-zoom.webp" alt="Glint at 1000 percent zoom with the pixel grid over a pixel-art character." width="1920" height="1013" loading="lazy"></div>
+          <figcaption>At 1000% the pixel grid appears, and every pixel of the character stays perfectly square.</figcaption>
+        </figure>
+        <figure>
+          <div class="window"><img src="assets/shots/glint-compare.webp" alt="Glint's swipe compare mode with metrics in the bottom bar." width="1920" height="1013" loading="lazy"></div>
+          <figcaption>Swipe mode in the real app. The bottom bar reports 96,023 differing pixels and a PSNR of 17.5 dB, the same numbers the demo above computes.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Flick ───────────────────────── -->
+    <section class="app reveal" id="flick">
+      <header class="app-head">
+        <img class="app-icon" src="assets/icons/flick.svg" alt="">
+        <div>
+          <p class="eyebrow">Flick · video</p>
+          <h2>Play anything, then cut exactly the part you want.</h2>
+        </div>
+      </header>
+      <p class="app-lede">
+        Flick is a video player built on libmpv, so it plays every format that mpv and FFmpeg understand, with hardware decoding.
+        Its controls fade away while a video plays. When you mark a clip or draw a crop, Flick reports both as exact
+        <code>ffmpeg</code> arguments that you or an agent can run straight away.
+      </p>
+
+      <div class="demo" data-flick tabindex="0" aria-label="Interactive Flick demo">
+        <div class="f-layout">
+          <div class="window f-window">
+            <div class="titlebar plain">
+              <span class="lights"></span>
+              <span class="win-title"><img src="assets/icons/flick.svg" alt="">bunny.mp4 — Flick</span>
+              <span class="live">Live demo</span>
+            </div>
+            <div class="f-stage">
+              <video muted playsinline preload="metadata" poster="assets/demo/bunny-poster.jpg" src="assets/demo/bunny.mp4" aria-label="A 20-second clip from Big Buck Bunny"></video>
+              <div class="f-crop" hidden><div class="f-crop-box"><div class="f-crop-tag"><span data-f-croplabel></span><button data-f-act="copycrop">Copy crop</button><button data-f-act="clearcrop">Clear</button></div></div></div>
+              <div class="f-toast" aria-live="polite"></div>
+              <button class="f-bigplay" data-f-act="play" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></button>
+              <div class="f-controls">
+                <div class="f-track" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0">
+                  <div class="f-clip"></div><div class="f-played"></div><div class="f-mark a"></div><div class="f-mark b"></div><div class="f-knob"></div>
+                </div>
+                <div class="f-row">
+                  <button class="f-icon" data-f-act="play" aria-label="Play or pause"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></button>
+                  <button class="f-icon" data-f-act="back" aria-label="Step back one frame"><svg viewBox="0 0 24 24"><path d="M17 6v12l-8-6zM7 6h2v12H7z"/></svg></button>
+                  <button class="f-icon" data-f-act="fwd" aria-label="Step forward one frame"><svg viewBox="0 0 24 24"><path d="M7 6v12l8-6zM15 6h2v12h-2z"/></svg></button>
+                  <span class="f-time" data-f-time>0:00 / 0:20</span>
+                  <span class="f-spacer"></span>
+                  <span class="f-cliplabel" data-f-cliplabel></span>
+                  <button class="f-icon is-on" data-f-act="loop" aria-label="Loop" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M17 4l3 3-3 3M20 7H8a4 4 0 0 0-4 4v1M7 20l-3-3 3-3M4 17h12a4 4 0 0 0 4-4v-1"/></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-side">
+            <div class="f-buttons">
+              <button data-f-act="markin"><kbd>[</kbd> Mark the start</button>
+              <button data-f-act="markout"><kbd>]</kbd> Mark the end</button>
+              <button data-f-act="cropmode"><kbd>C</kbd> Draw a crop</button>
+              <button data-f-act="clear"><kbd>\</kbd> Clear the marks</button>
+            </div>
+            <div class="term">
+              <div class="term-bar"><span class="lights"></span><span>pwsh — flick state</span></div>
+              <pre data-f-state></pre>
+            </div>
+            <div class="term cmd">
+              <div class="term-bar"><span class="lights"></span><span>The command Flick hands you</span><button class="copy" data-f-act="copycmd">Copy</button></div>
+              <pre data-f-cmd></pre>
+            </div>
+          </div>
+        </div>
+        <p class="hint-row">
+          <span><b>Try it:</b> press play, then press <kbd>[</kbd> and <kbd>]</kbd> to mark a clip. The clip loops so you can check it.
+          Press <kbd>C</kbd> and drag over the video to draw a crop. The state and the ffmpeg command update as you go.</span>
+          <span class="keys"><kbd>Space</kbd> play <kbd>,</kbd> <kbd>.</kbd> step a frame <kbd>←</kbd> <kbd>→</kbd> 1 second <kbd>L</kbd> loop</span>
+        </p>
+      </div>
+
+      <div class="features">
+        <div><h3>The interface stays calm.</h3><p>A slim control bar fades out while a video plays and returns when you move the mouse. Flick remembers where you stopped in every file and keeps the display awake while you watch.</p></div>
+        <div><h3>It is built for cutting.</h3><p>You can step frame by frame, loop a marked clip while you check it, and draw crop regions measured in real video pixels. <code>flick state</code> reports all of it as JSON.</p></div>
+        <div><h3>Links and subtitles just work.</h3><p>Paste a link with <kbd>Ctrl</kbd><kbd>V</kbd> and Flick plays it. Subtitles next to the video load automatically, and you can drop an <code>.srt</code> file onto the window to add one.</p></div>
+        <div><h3>Edits show up on their own.</h3><p>When a file changes on disk, Flick reloads it at the same position, so a re-encode appears without you lifting a finger. <code>flick contact</code> tiles a whole video into one image.</p></div>
+      </div>
+
+      <div class="shots">
+        <figure>
+          <div class="window"><img src="assets/shots/flick-clip.webp" alt="Flick with a clip from 1:31 to 1:47 marked on the timeline." width="1920" height="1013" loading="lazy"></div>
+          <figcaption>The real app with a clip marked from 1:31 to 1:47. The clip label sits at the right of the control bar.</figcaption>
+        </figure>
+        <figure>
+          <div class="window"><img src="assets/shots/flick-crop.webp" alt="Flick with a 672 by 800 crop region drawn around the bunny." width="1920" height="1013" loading="lazy"></div>
+          <figcaption>A crop region of 672 × 800 pixels. Flick reports it as <code>crop=672:800:360:180</code>.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Leaf ───────────────────────── -->
+    <section class="app reveal" id="leaf">
+      <header class="app-head">
+        <img class="app-icon" src="assets/icons/leaf.svg" alt="">
+        <div>
+          <p class="eyebrow">Leaf · PDF and Word</p>
+          <h2>Read documents comfortably, by day or by night.</h2>
+        </div>
+      </header>
+      <p class="app-lede">
+        Leaf renders PDFs with pdfium, the engine inside Chrome, and opens Word documents as a single clean column that wraps to the window.
+        Its search finds words even when they are hyphenated across a line break, and the text you copy comes out as proper paragraphs.
+      </p>
+
+      <div class="demo" data-leaf tabindex="0" aria-label="Interactive Leaf demo">
+        <div class="window">
+          <div class="titlebar plain">
+            <span class="lights"></span>
+            <span class="win-title"><img src="assets/icons/leaf.svg" alt="">Leaf.docx — Leaf</span>
+            <span class="live">Live demo</span>
+          </div>
+          <div class="l-body">
+            <aside class="l-side">
+              <p class="l-label">Search results</p>
+              <ol class="l-results" data-l-results></ol>
+              <p class="l-label">Contents</p>
+              <ol class="l-toc" data-l-toc></ol>
+            </aside>
+            <div class="l-main">
+              <div class="l-find">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+                <input type="search" value="photosynthesis" aria-label="Find in document" spellcheck="false" data-l-query>
+                <span class="l-count" data-l-count></span>
+                <button data-l-act="prev" aria-label="Previous match">↑</button>
+                <button data-l-act="next" aria-label="Next match">↓</button>
+                <button data-l-act="night" aria-pressed="false" class="l-night"><kbd>D</kbd> Night</button>
+              </div>
+              <div class="l-scroll" data-l-scroll>
+                <article class="l-page" data-l-page></article>
+              </div>
+              <div class="l-ticks" data-l-ticks aria-hidden="true"></div>
+              <div class="l-toast" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+        <p class="hint-row">
+          <span><b>Try it:</b> the search already found “photosynthesis” four times, including once where the word is split across two lines.
+          Type another word, press <kbd>Enter</kbd> to step through the matches, select a few lines and copy them, or press <kbd>D</kbd> for night mode.</span>
+          <span class="keys"><kbd>Ctrl</kbd><kbd>F</kbd> find <kbd>Enter</kbd> next match <kbd>D</kbd> night mode</span>
+        </p>
+      </div>
+
+      <div class="features">
+        <div><h3>Search finds what you meant.</h3><p>Every match is highlighted and listed with its surrounding text, and ticks on the scrollbar show where the matches are. A word broken as “exam-” and “ple” still matches “example”.</p></div>
+        <div><h3>Copied text is clean.</h3><p>Leaf joins line breaks back into paragraphs and rejoins hyphenated words, so a quote pasted into an email or a prompt reads like the original sentence.</p></div>
+        <div><h3>Night mode keeps photos real.</h3><p>Pressing <kbd>D</kbd> turns pages dark for reading at night, while photos and figures keep their true colours instead of being inverted.</p></div>
+        <div><h3>It reloads while you write.</h3><p>When a LaTeX or Typst build, a script or Claude rewrites the file, Leaf reloads it in place. It also remembers your page and zoom for every document.</p></div>
+      </div>
+
+      <figure class="night-compare">
+        <div class="swipe" data-swipe style="--pos:50%">
+          <img src="assets/demo/leaf-page-light.webp" alt="A PDF page rendered by Leaf in normal mode." width="993" height="1250" loading="lazy">
+          <div class="swipe-b"><img src="assets/demo/leaf-page-dark.webp" alt="The same page rendered by Leaf in night mode, with the photos still in colour." width="993" height="1250" loading="lazy"></div>
+          <div class="swipe-handle" aria-hidden="true"><span></span></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare day and night rendering">
+          <span class="tag tag-a">leaf render</span><span class="tag tag-b">leaf render --dark</span>
+        </div>
+        <figcaption>
+          <b>This is Leaf's real output for a PDF page.</b> The left side comes from <code>leaf render</code> and the right side from
+          <code>leaf render --dark</code>. Drag the handle and notice that the text and background change while the photographs stay exactly as they were.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ───────────────────────── Instant ───────────────────────── -->
+    <section class="instant reveal" id="instant">
+      <div class="section-head">
+        <p class="eyebrow">Always ready</p>
+        <h2>Double-click a file, and it's already open.</h2>
+        <p>
+          When you close the window, the app keeps running quietly in the system tray, and it starts with Windows.
+          The next file you double-click opens straight away, with no splash screen and no waiting. Glint opens an image in under 100 milliseconds.
+        </p>
+      </div>
+      <div class="desk">
+        <div class="files" role="group" aria-label="Files on a desktop. Double-click one to open it.">
+          <button class="file" data-open="0"><span class="file-icon img"></span><span>meadow.png</span></button>
+          <button class="file" data-open="1"><span class="file-icon vid"></span><span>bunny.mp4</span></button>
+          <button class="file" data-open="2"><span class="file-icon doc"></span><span>leaf.pdf</span></button>
+          <p class="hint">Double-click a file to open it.</p>
+        </div>
+        <div class="mini-window" aria-live="polite">
+          <div class="mini-bar"><span class="mini-title">Nothing is open yet</span><span class="mini-app"></span></div>
+          <div class="mini-view"><p class="mini-empty">Choose a file on the left.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Agents ───────────────────────── -->
+    <section class="agents reveal" id="agents">
+      <div class="section-head">
+        <p class="eyebrow">Built for working with agents</p>
+        <h2>You point at it. Claude does the rest.</h2>
+        <p>
+          Every app can describe what is on screen as JSON, including your selection, marks, page and zoom, and every app can be
+          controlled from a script. You mark something in the viewer, an agent like Claude Code reads it and does the work, and
+          the viewer reloads to show you the result.
+        </p>
+      </div>
+
+      <div class="claude" data-typer>
+        <div class="term-bar"><span class="lights"></span><span>claude</span></div>
+        <div class="claude-body">
+          <p class="u"><span>&gt;</span> trim the part I marked in flick and crop it to the box</p>
+          <p class="t"><span class="bullet">●</span> <b>Bash</b>(flick state)</p>
+          <p class="o">⎿ clip -ss 00:01:31.500 -to 00:01:47.200 · region crop=672:800:360:180</p>
+          <p class="t"><span class="bullet">●</span> <b>Bash</b>(ffmpeg -ss 00:01:31.500 -to 00:01:47.200 -i bunny.mp4 -vf crop=672:800:360:180 apple.mp4)</p>
+          <p class="o">⎿ apple.mp4 · 15.7 s · 672×800</p>
+          <p class="t"><span class="bullet">●</span> <b>Bash</b>(flick open apple.mp4)</p>
+          <p class="a"><span class="bullet amber">●</span> Done. The new clip is 15.7 seconds long, cropped to the bunny, and it's playing in Flick now.</p>
+        </div>
+      </div>
+
+      <div class="cli-grid">
+        <div class="cli">
+          <h3><img src="assets/icons/glint.svg" alt="">glint</h3>
+          <dl>
+            <dt>state</dt><dd>Reports the file, zoom, visible area and the pixel under the cursor.</dd>
+            <dt>snap</dt><dd>Saves exactly what the viewer shows as a PNG.</dd>
+            <dt>compare</dt><dd>Prints AE, RMSE and PSNR, then opens compare mode.</dd>
+            <dt>edit</dt><dd>Crops, trims, scales or converts an image, with undo.</dd>
+          </dl>
+        </div>
+        <div class="cli">
+          <h3><img src="assets/icons/flick.svg" alt="">flick</h3>
+          <dl>
+            <dt>state</dt><dd>Reports the position, clip marks, crop region and tracks.</dd>
+            <dt>ctl</dt><dd>Seeks, pauses or loops the running player.</dd>
+            <dt>frame</dt><dd>Saves any single frame without opening the player.</dd>
+            <dt>contact</dt><dd>Tiles frames from a whole video into one image.</dd>
+          </dl>
+        </div>
+        <div class="cli">
+          <h3><img src="assets/icons/leaf.svg" alt="">leaf</h3>
+          <dl>
+            <dt>state</dt><dd>Reports the page, zoom, selection and search.</dd>
+            <dt>text</dt><dd>Prints PDF text page by page, or a Word file as Markdown.</dd>
+            <dt>find</dt><dd>Lists every match with its page and context.</dd>
+            <dt>render</dt><dd>Renders a page or a region of it as a PNG.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── Family ───────────────────────── -->
+    <section class="family reveal">
+      <div class="section-head">
+        <p class="eyebrow">One family</p>
+        <h2>Three apps that feel like one.</h2>
+      </div>
+      <ul class="traits">
+        <li><b>They share one look.</b><span>All three use the same dark canvas, the same amber accent and the same command palette on <kbd>Ctrl</kbd><kbd>P</kbd>.</span></li>
+        <li><b>They live in the tray.</b><span>Closing a window hides it instead of quitting, so the next file opens instantly. Flick stops playback when you close it.</span></li>
+        <li><b>They remember your place.</b><span>Your position in a video and your page and zoom in a document are restored when you open the file again.</span></li>
+        <li><b>They reload on their own.</b><span>When a file changes on disk, the app reloads it and keeps you looking at the same spot.</span></li>
+        <li><b>They respect each other.</b><span>Each app makes itself the default only for its own file types and keeps the other apps' defaults in place.</span></li>
+        <li><b>Help is one key away.</b><span>Press <kbd>F1</kbd> in any of them to see every keyboard shortcut. This page works the same way.</span></li>
+      </ul>
+    </section>
+
+    <!-- ───────────────────────── Download ───────────────────────── -->
+    <section class="download reveal" id="download">
+      <div class="section-head center">
+        <p class="eyebrow">Download</p>
+        <h2>Make them your defaults.</h2>
+        <p>All three apps are free and open source. They run on Windows 10 and 11 (64-bit), and each one installs on its own in a few seconds.</p>
+      </div>
+      <div class="dl-grid">
+        <div class="dl">
+          <img src="assets/icons/glint.svg" alt="">
+          <span class="dl-name">Glint</span>
+          <span class="dl-kind">Images and sprite sheets</span>
+          <a class="btn btn-small" href="https://github.com/ethanma03/glint/releases/latest/download/Glint-win-x64.zip">Download Glint</a>
+          <span class="dl-meta">Version 0.1.0 · 12.5 MB · <a href="https://github.com/ethanma03/glint">Source</a></span>
+        </div>
+        <div class="dl">
+          <img src="assets/icons/flick.svg" alt="">
+          <span class="dl-name">Flick</span>
+          <span class="dl-kind">Video and audio</span>
+          <a class="btn btn-small" href="https://github.com/ethanma03/flick/releases/latest/download/Flick-win-x64.zip">Download Flick</a>
+          <span class="dl-meta">Version 0.1.0 · 49 MB · <a href="https://github.com/ethanma03/flick">Source</a></span>
+        </div>
+        <div class="dl">
+          <img src="assets/icons/leaf.svg" alt="">
+          <span class="dl-name">Leaf</span>
+          <span class="dl-kind">PDF and Word documents</span>
+          <a class="btn btn-small" href="https://github.com/ethanma03/leaf/releases/latest/download/Leaf-win-x64.zip">Download Leaf</a>
+          <span class="dl-meta">Version 0.1.0 · 10.6 MB · <a href="https://github.com/ethanma03/leaf">Source</a></span>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li><b>Unzip the download.</b> You can unzip it anywhere, for example in your Downloads folder.</li>
+        <li><b>Double-click <code>Install.cmd</code>.</b> The app installs for your user account only, adds its command to your PATH and starts in the tray.</li>
+        <li><b>Approve the one prompt if you like.</b> Windows asks once whether the app may become your default. If you agree, it takes over its file types the next time you sign in.</li>
+      </ol>
+      <p class="note">
+        The apps are not code-signed yet, so Windows SmartScreen may say that it “protected your PC”. Click <b>More info</b> and then
+        <b>Run anyway</b>. Every line of code is public on GitHub, and you can remove an app at any time with <code>Uninstall.cmd</code>.
+      </p>
+
+      <details class="source">
+        <summary>Build from source instead</summary>
+<pre>git clone https://github.com/ethanma03/glint
+cd glint
+pwsh scripts\install.ps1   <span class="c"># builds, installs and registers file types</span>
+pwsh scripts\update.ps1    <span class="c"># later: pulls, rebuilds and reinstalls</span></pre>
+        <p>You need Rust and the GitHub CLI. Flick and Leaf download libmpv and pdfium during their first build. The same steps work for <code>flick</code> and <code>leaf</code>.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <a class="brand" href="#top"><svg class="spark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4C34 22 42 30 60 32C42 34 34 42 32 60C30 42 22 34 4 32C22 30 30 22 32 4Z"/></svg><span>openwith</span></a>
+      <p>Glint, Flick and Leaf are made by <a href="https://github.com/ethanma03">Ethan Ma</a> and released under the MIT license.</p>
+      <p class="footer-keys">Press <kbd>Ctrl</kbd><kbd>K</kbd> to jump anywhere, or <kbd>F1</kbd> to see the keyboard shortcuts.</p>
+    </div>
+    <p class="credits">
+      The demo content is used under open licenses. The pixel art comes from Kenney's <a href="https://kenney.nl/assets/pixel-platformer">Pixel Platformer</a> (CC0).
+      <a href="https://peach.blender.org/"><i>Big Buck Bunny</i></a> is © Blender Foundation and licensed under CC BY 3.0.
+      The article and photographs come from Wikipedia's <a href="https://en.wikipedia.org/wiki/Leaf">“Leaf”</a> and are licensed under CC BY-SA 4.0.
+    </p>
+  </footer>
+
+  <!-- Command palette, styled like the apps' Ctrl+P palette -->
+  <div class="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+    <div class="palette-box">
+      <div class="palette-input"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><input type="text" placeholder="Type a command or a section…" aria-label="Command" spellcheck="false"></div>
+      <ul class="palette-list" role="listbox"></ul>
+      <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> choose <kbd>Enter</kbd> run <kbd>Esc</kbd> close</p>
+    </div>
+  </div>
+
+  <!-- F1 shortcut sheet -->
+  <div class="help" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" hidden>
+    <div class="help-box">
+      <div class="help-head"><h2>Keyboard shortcuts</h2><button data-help-close aria-label="Close">×</button></div>
+      <div class="help-cols">
+        <div><h3>This page</h3><dl><dt><kbd>Ctrl</kbd><kbd>K</kbd></dt><dd>Open the command palette</dd><dt><kbd>F1</kbd> or <kbd>?</kbd></dt><dd>Show this sheet</dd><dt><kbd>Esc</kbd></dt><dd>Close a dialog</dd></dl></div>
+        <div><h3><img src="assets/icons/glint.svg" alt="">Glint demo</h3><dl><dt>Scroll</dt><dd>Zoom in whole steps</dd><dt><kbd>0</kbd></dt><dd>Fit to the window</dd><dt><kbd>1</kbd>–<kbd>9</kbd></dt><dd>Zoom to 100–900%</dd><dt><kbd>G</kbd></dt><dd>Toggle the pixel grid</dd><dt><kbd>M</kbd></dt><dd>Next compare mode</dd></dl></div>
+        <div><h3><img src="assets/icons/flick.svg" alt="">Flick demo</h3><dl><dt><kbd>Space</kbd></dt><dd>Play or pause</dd><dt><kbd>[</kbd> <kbd>]</kbd></dt><dd>Mark the clip start and end</dd><dt><kbd>\</kbd></dt><dd>Clear the marks</dd><dt><kbd>C</kbd></dt><dd>Draw a crop region</dd><dt><kbd>,</kbd> <kbd>.</kbd></dt><dd>Step one frame</dd><dt><kbd>L</kbd></dt><dd>Loop</dd></dl></div>
+        <div><h3><img src="assets/icons/leaf.svg" alt="">Leaf demo</h3><dl><dt><kbd>Ctrl</kbd><kbd>F</kbd></dt><dd>Find in the document</dd><dt><kbd>Enter</kbd></dt><dd>Next match</dd><dt><kbd>Shift</kbd><kbd>Enter</kbd></dt><dd>Previous match</dd><dt><kbd>D</kbd></dt><dd>Night mode</dd><dt><kbd>Ctrl</kbd><kbd>C</kbd></dt><dd>Copy as clean paragraphs</dd></dl></div>
+      </div>
+      <p class="help-foot">The demo shortcuts work while the pointer is over a demo or after you click into it.</p>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
