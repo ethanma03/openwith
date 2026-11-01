@@ -1,0 +1,6 @@
+// Deploys the site as static assets on Cloudflare: run `npx wrangler deploy` from this folder.
+{
+  "name": "openwith",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "." }
+}

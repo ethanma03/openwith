@@ -15,11 +15,11 @@ python -m http.server 8765    # then open http://127.0.0.1:8765
 ```
 
 ## Deploy
-Cloudflare Pages deploys the `main` branch automatically. To deploy by hand, run:
+The site runs on Cloudflare as static assets. From this folder, run:
 ```powershell
-npx wrangler pages deploy . --project-name openwith
+npx wrangler deploy
 ```
-`_headers` sets caching and basic security headers.
+`wrangler.jsonc` names the project, and `.assetsignore` keeps the repo files (README, git data, config) out of the upload. `_headers` sets caching and basic security headers.
 
 ## Downloads
 The download buttons point at `https://github.com/ethanma03/<app>/releases/latest/download/<App>-win-x64.zip`, so a new GitHub release updates the site without any change here. Each app repo builds that zip with `pwsh scripts\package.ps1`.
