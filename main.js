@@ -296,6 +296,10 @@
     video.addEventListener("play", () => { stageEl.classList.add("playing"); wake(); requestAnimationFrame(tick); });
     video.addEventListener("pause", () => { stageEl.classList.remove("playing"); wake(); renderBar(); renderState(); });
     video.addEventListener("seeked", () => { renderBar(); renderState(); });
+    // requestAnimationFrame pauses in background tabs; timeupdate keeps the clip looping anyway.
+    video.addEventListener("timeupdate", () => {
+      if (F.loop && F.a != null && F.b != null && !video.paused && video.currentTime >= F.b) video.currentTime = F.a;
+    });
     video.addEventListener("loadedmetadata", () => { dur = video.duration || 20; vw = video.videoWidth || 960; vh = video.videoHeight || 540; track.setAttribute("aria-valuemax", dur.toFixed(1)); renderBar(); renderState(); });
     video.addEventListener("ended", () => { if (F.loop) { video.currentTime = F.a ?? 0; video.play(); } });
     stageEl.addEventListener("pointermove", wake);
