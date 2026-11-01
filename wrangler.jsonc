@@ -1,6 +1,11 @@
 // Deploys the site as static assets on Cloudflare: run `npx wrangler deploy` from this folder.
+// The custom domains attach openwith.dev and www.openwith.dev (the zone is on the same account).
 {
   "name": "openwith",
   "compatibility_date": "2026-10-01",
-  "assets": { "directory": "." }
+  "assets": { "directory": "." },
+  "routes": [
+    { "pattern": "openwith.dev", "custom_domain": true },
+    { "pattern": "www.openwith.dev", "custom_domain": true }
+  ]
 }
